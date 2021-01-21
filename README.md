@@ -2,6 +2,8 @@
 
  - a magisk module that make "adb shell" colorful
 
+[简体中文](README_zh-CN.md)
+
 # What it used for?
 
  - I believed that everyone used bash may thinking a question:
@@ -47,3 +49,16 @@ so you can add this line to /data/adb_home/.bashrc
 ```
 alias su='su -p -c "bash --rcfile /data/adb_home/.bashrc"'
 ```
+
+# troubleshooting
+
+## not working
+ - try `/data/adb/modules/adb_shell/system/bin/bash` or `bash` as rooted shell/adb shell
+ 1. if root can execute but not adb, chmod and chcon it.
+ 2. in case of even root cann't execute it after chmod+x, maybe CPU architecture not match. [cross compile](https://github.com/floyd-fuh/ARM-cross-compile/blob/master/ubuntu-compile-bash.sh)  another bash.
+ - adb shell and cat /data/adb_home/.bashrc, if not working, chcon and chmod it.
+ - pay attention of the fact that `su 2000` have different SELinux context.
+ 
+## bootloop or something else worse
+ - `rm -rf /data/adb/modules/adb_bash` or `touch /data/adb/modules/adb_bash/disable` can disable module if your recovery is TWRP.
+ - check if orginal mkshrc (/etc/mkshrc) have anything special commands (maybe other module edited this file?)
