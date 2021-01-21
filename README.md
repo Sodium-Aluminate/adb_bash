@@ -45,7 +45,8 @@ even you run `su -s bash`, you will found that `$0` is /system/bin/sh
 
 the only way to avoid is exec bash as a command(su -c)
 
-so you can add this line to /data/adb_home/.bashrc
+so you can add this line to /data/adb_home/.bash_aliases
+
 ```
 alias su='su -p -c "bash --rcfile /data/adb_home/.bashrc"'
 ```
