@@ -41,7 +41,7 @@ magisk su 很魔法，执行 `su -s` 根据文档是指定运行的 shell，但 
 
 因此智能靠 `su -c` 替代。
 
-为了防止奇怪的问题，这段内容需要你自己决定要不要加入 `/data/adb_home/.bashrc`。
+为了防止奇怪的问题，这段内容需要你自己决定要不要加入 `/data/adb_home/.bash_aliases`。
 
 ```
 alias su='su -p -c "bash --rcfile /data/adb_home/.bashrc"'
