@@ -1,0 +1,6 @@
+id=adb_bash
+name=ADB Bash
+version=v1.3
+versionCode=103
+author=Al Pt (telegram @NaAlOH4)
+description=adb shell driving me mad! let's try bash~ this module will change root-shell and adb shell to bash. btw: bash 5.0; bash build for arm64(may be not working but you can build another one); termux bin will add to $PATH if termux installed && run as root; this module will NOT delete /data/adb_home even uninstall, you can delete it by root-shell.
